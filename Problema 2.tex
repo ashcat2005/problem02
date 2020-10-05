@@ -1,0 +1,58 @@
+\documentclass[11pt]{article}
+\pagestyle{plain}
+\usepackage{latexsym,exscale,amsfonts,amsmath,amssymb,array}
+\usepackage{color}
+\usepackage[colorlinks]{hyperref}
+\setlength{\topmargin}{-2.3cm}
+\setlength{\textheight}{23.8cm}
+\setlength{\oddsidemargin}{-0.5cm}
+\setlength{\textwidth}{17cm}
+\setlength{\parindent}{0cm}
+\setlength{\parskip}{.4cm}
+\newcommand{\totaldiffx}{\frac{d}{dx}}
+\newcommand{\pardiffx}{\frac{\partial}{\partial x}}
+\newcommand{\luft}{\:\!}
+
+\usepackage{graphicx}
+%\usepackage[latin1]{inputenc}
+\usepackage{mathpazo}
+\usepackage[T1]{fontenc}
+\usepackage[comma,numbers,sort&compress]{natbib}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+
+
+\begin{document}
+\begin{center}
+\large \bf Astrofísica Computacional\rm \\
+2020\\
+{\small Problema 2. Potencial Gravitacional en el interior de una Enana Blanca}
+\end{center}
+
+ {\bf Potencial Gravitacional en el interior de una Enana Blanca} \\
+ 
+Dentro de los resultados del Problema 1, se encontró la densidad de masa $\rho(r)$ en el interior de una enana blanca. Con esta información, es posible encontrar el potencial gravitacional en el interior de este objeto astrofísico al solucionar la ecuación de Poisson,
+\begin{equation}
+\nabla^2 \phi (t, \textbf{r})= 4 \pi \rho(t, \textbf{r}).
+\end{equation}
+
+Aunque esta relación es una ecuación diferencial parcial, al imponer la simetría esférica que posee el sistema que se desea describir, se reduce a la ecuación radial
+\begin{equation}
+ \frac{1}{r^2} \frac{d}{dr} \left( r^2 \dfrac{d\phi (r)}{dr} \right) = 4 \pi \rho (r),
+ \end{equation} 
+en donde las derivadas parciales se han convertido en derivadas totales debido a la dependencia de las funciones. El problema diferencial queda completamente definido al imponer los valores de frontera,
+\begin{align}
+ \phi (0) = &0 \\
+ \phi ( R) = & -\frac{GM}{R},
+ \end{align} 
+donde $M$ y $R$ son la masa y el radio de la enana blanca calculados en el Problema 1. 
+
+\begin{enumerate}
+\item Resuelva el problema de valores de frontera mediante el método shooting, utilizando un adecuado estimado inicial para la primera derivada y un método Runge-Kutta de orden 4.
+
+\item Resuelva el problema de valores de frontera utilizando el método de diferencias-finitas.
+
+\item Identifique si existe alguna diferencia en el potencial obtenido con los dos métodos. Grafique las soluciones obtenidas.
+\end{enumerate}
+
+\end{document}
